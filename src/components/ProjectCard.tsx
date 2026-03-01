@@ -13,7 +13,6 @@ interface ProjectCardProps {
 }
 
 const ProjectCard = ({ repo, index }: ProjectCardProps) => {
-  const liveUrl = repo.homepage?.trim() || null;
 
   return (
     <motion.div
@@ -87,9 +86,9 @@ const ProjectCard = ({ repo, index }: ProjectCardProps) => {
         >
           <Github size={14} /> Code
         </a>
-        {liveUrl && (
+        {repo.liveUrl && (
           <a
-            href={liveUrl}
+            href={repo.liveUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 text-xs font-medium text-primary hover:brightness-110 transition-all"
